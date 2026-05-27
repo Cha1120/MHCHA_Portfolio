@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Custom FI Payment Solution 프로젝트 상세 내역. SAP ABAP FI 모듈 개발.">
+  <title>Custom FI Payment Solution - Project Detail V2</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body class="lang-ko">
+
+  <!-- WebGL Background Canvas for 3D Constellation -->
+  <canvas id="webgl-bg"></canvas>
+
+  <!-- Header with Back Link & Language Toggle -->
+  <header id="header" class="scrolled">
+    <div class="container navbar">
+      <a href="index2.html" class="nav-logo">
+        <span>SAP</span> ABAPer
+      </a>
+      <ul class="nav-links" style="display: flex;">
+        <li>
+          <a href="index2.html#projects">
+            <span class="lang-ko">&larr; 홈으로 돌아가기</span>
+            <span class="lang-en">&larr; Back to Home</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Language Selector Toggle -->
+      <div class="lang-switcher">
+        <button id="btn-ko" class="lang-btn active">KO</button>
+        <button id="btn-en" class="lang-btn">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="project-detail-section">
+    <!-- Project Header -->
+    <div class="project-detail-header">
+      <div class="container">
+        <!-- Badge is placed directly in the flow to prevent absolute overlaps -->
+        <span class="project-badge-inline" style="background-color: rgba(37, 99, 235, 0.2); margin-bottom: 8px;">
+          <span class="lang-ko">캡스톤 디자인</span>
+          <span class="lang-en">Capstone Design</span>
+        </span>
+        <h1>
+          <span class="lang-ko">SAP ABAP FI 입출금 커스텀 솔루션</span>
+          <span class="lang-en">SAP ABAP Custom FI Payment Solution</span>
+        </h1>
+        <div class="project-detail-meta">
+          <span class="tag tag-core">SAP FI Module</span>
+          <span class="tag tag-domain">CBO Development</span>
+          <span class="tag tag-web">ABAP ALV</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Body -->
+    <div class="container project-detail-body">
+      <div class="project-detail-grid">
+        
+        <!-- Main Content -->
+        <div class="project-detail-card">
+          <!-- Role -->
+          <div class="project-detail-section-block">
+            <h2>
+              <span class="lang-ko">담당 역할</span>
+              <span class="lang-en">Role</span>
+            </h2>
+            <p><strong>
+              <span class="lang-ko">요구사항 분석, CBO 테이블 설계 및 ALV &amp; BAPI 로직 구현</span>
+              <span class="lang-en">Requirements Analysis, Custom Table (CBO) Design, and Logic Implementation (ALV &amp; BAPI)</span>
+            </strong></p>
+            <p class="lang-ko">
+              재무 부서의 요구사항을 수집하여 실무 중심의 기술 명세서로 변환하는 작업을 주도하였습니다. 이를 위해 데이터를 저장할 커스텀 CBO 테이블 데이터 모델을 설계하고, 화면 제어(ALV Grid Control) 및 비즈니스 프로세스 자동화를 위한 ABAP 백엔드 로직 전체를 개발하였습니다.
+            </p>
+            <p class="lang-en">
+              I was responsible for translating complex business requirements from the finance department into concrete technical specifications. This included designing custom database tables (CBO tables) to log transactions and implementing the complete ABAP logic for screen rendering (ALV Grid control) and posting automation.
+            </p>
+          </div>
+
+          <!-- Background -->
+          <div class="project-detail-section-block">
+            <h2>
+              <span class="lang-ko">개발 배경</span>
+              <span class="lang-en">Background</span>
+            </h2>
+            <p class="lang-ko">
+              SAP 표준 전표 전기 트랜잭션은 현업 부서의 대량 일괄 결재 및 검증 프로세스를 효율적으로 지원하지 못했습니다. 보안 강화 및 회계 감사 프로세스 준수를 위해 전표 확정 및 원장 반영 전에 다단계 검증 처리가 가능한 솔루션이 필요했습니다.
+            </p>
+            <p class="lang-ko">
+              이에 따라 입금 정보 처리를 위한 <code>ZNS_FI_INPAY</code> 프로그램과 출금 전표 처리를 위한 <code>ZNS_FI_OTPAY</code> CBO 프로그램을 설계했습니다. 이 솔루션을 통해 실무 담당자가 업로드한 원시 데이터를 실시간으로 파싱하고 임시 테이블에 적재하여 정합성을 사전에 검증할 수 있는 환경을 마련했습니다.
+            </p>
+            <p class="lang-en">
+              The standard SAP payment transaction did not natively support the client's specific bulk approval and posting workflows. For security and audit compliance, the finance team required multi-level batch processing before documents could be committed to the ledger.
+            </p>
+            <p class="lang-en">
+              To solve this, I designed two core CBO programs: <code>ZNS_FI_INPAY</code> (for incoming payment batches) and <code>ZNS_FI_OTPAY</code> (for outgoing payment batches). These custom programs allowed operators to upload, stage, and pre-verify bulk transactions prior to final posting.
+            </p>
+          </div>
+
+          <!-- Troubleshooting & Solution -->
+          <div class="project-detail-section-block">
+            <h2>
+              <span class="lang-ko">트러블슈팅 &amp; 해결 방안</span>
+              <span class="lang-en">Troubleshooting &amp; Solution</span>
+            </h2>
+            <p class="lang-ko">
+              <strong>문제 상황:</strong> 1,000건 이상의 대량 전표를 일괄 처리하는 스트레스 테스트 중, 데이터 불일치(Data Consistency) 문제가 발생했습니다. 루프 도중 특정 데이터 오류로 인해 일부 항목만 전표 전기가 성공하고 나머지는 오류가 나면서, 임시 저장 테이블과 실제 회계 원장의 데이터가 불일치하는 심각한 원장 불일치 현상이 나타났습니다.
+            </p>
+            <p class="lang-ko">
+              <strong>해결책:</strong> 일괄 처리 프로세스의 안정성을 극대화하기 위해 SAP 표준 전표 처리 함수인 <code>BAPI_ACC_DOCUMENT_POST</code>를 활용하고, 이를 트랜잭션 단위로 묶는 래퍼(Wrapper) 로직을 개발했습니다. BAPI 처리 후 결과 로그(Return Table)를 파싱하여 단 한 건의 에러('E')라도 감지되면 즉시 <code>BAPI_TRANSACTION_ROLLBACK</code>을 수행하고 전체 트랜잭션을 취소하도록 하였으며, 모든 항목이 유효할 때만 <code>COMMIT WORK AND WAIT</code>를 실행하여 전표의 데이터 무결성을 보장했습니다.
+            </p>
+            <p class="lang-en">
+              <strong>Challenge:</strong> During stress testing with large bulk data (1,000+ records), we encountered data consistency issues. Partial document posting occurred due to logical errors mid-execution, leaving some records posted while others rolled back, causing ledger imbalances.
+            </p>
+            <p class="lang-en">
+              <strong>Solution:</strong> I re-architected the batch logic to utilize the standard SAP function module <code>BAPI_ACC_DOCUMENT_POST</code>. I wrapped the posting loop in a transaction wrapper with strict <code>COMMIT WORK AND WAIT</code> and <code>ROLLBACK WORK</code> logic. If any single document posting in the batch failed validation, the entire database transaction rolled back, ensuring complete "all-or-nothing" data integrity.
+            </p>
+            
+            <!-- Code Section -->
+            <div class="code-block-container">
+              <div class="code-block-header">
+                <span class="code-block-title">zns_fi_post_wrapper.abap</span>
+                <span class="code-block-title">ABAP</span>
+              </div>
+              <div class="code-block-pre">
+                <pre class="code-block-code"><code><span class="code-comment">* Call posting BAPI for transaction item</span>
+<span class="code-keyword">CALL FUNCTION</span> <span class="code-string">'BAPI_ACC_DOCUMENT_POST'</span>
+  <span class="code-keyword">EXPORTING</span>
+    documentheader    = ls_header
+  <span class="code-keyword">TABLES</span>
+    accountgl         = lt_accountgl
+    currencyamount    = lt_currencyamount
+    return            = lt_return.
+
+<span class="code-comment">* Read return log to check for errors</span>
+<span class="code-keyword">READ TABLE</span> lt_return <span class="code-keyword">WITH KEY</span> type = <span class="code-string">'E'</span> <span class="code-keyword">TRANSPORTING NO FIELDS</span>.
+<span class="code-keyword">IF</span> sy-subrc = 0.
+  <span class="code-keyword">CALL FUNCTION</span> <span class="code-string">'BAPI_TRANSACTION_ROLLBACK'</span>.
+  ls_log-status = <span class="code-string">'E'</span>.
+  ls_log-message = <span class="code-string">'Error during document post. Rolled back.'</span>.
+<span class="code-keyword">ELSE</span>.
+  <span class="code-keyword">CALL FUNCTION</span> <span class="code-string">'BAPI_TRANSACTION_COMMIT'</span>
+    <span class="code-keyword">EXPORTING</span>
+      wait = <span class="code-string">'X'</span>.
+  ls_log-status = <span class="code-string">'S'</span>.
+  ls_log-message = <span class="code-string">'Document posted successfully.'</span>.
+<span class="code-keyword">ENDIF</span>.</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- User Experience -->
+          <div class="project-detail-section-block">
+            <h2>
+              <span class="lang-ko">사용자 경험 (UX)</span>
+              <span class="lang-en">User Experience (UX)</span>
+            </h2>
+            <p class="lang-ko">
+              시스템 관리자와 현업 부서 사용자가 일괄 처리 결과를 편리하게 감사(Audit)할 수 있도록 상세 ALV 로그 그리드를 구축했습니다.
+              그리드 행에 신호등(Traffic Light) 및 색상 필터링 규칙을 적용하여 성공건은 녹색, 에러건은 적색으로 하이라이트하고, 에러 행을 더블클릭할 시 즉시 오류가 발생한 데이터 필드로 포커스가 이동하는 드릴다운 기능을 추가하여 유지보수 소요 시간을 크게 줄였습니다.
+            </p>
+            <p class="lang-en">
+              To ensure system administrators and finance users could audit execution logs seamlessly, I developed a detailed ALV success/error log grid. 
+              The ALV report dynamically color-coded rows (green for successful postings, red for errors) and allowed users to double-click on any error line to drill down directly to the offending data field, reducing troubleshooting times significantly.
+            </p>
+          </div>
+        </div>
+
+        <!-- Sidebar (Visuals) -->
+        <div class="project-detail-sidebar">
+          <div class="image-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375 0 11-.75 0 .375 0 01.75 0z" />
+            </svg>
+            <span>
+              <span class="lang-ko">ALV 리포트 스크린샷</span>
+              <span class="lang-en">ALV Report Screenshot</span>
+            </span>
+            <p>
+              <span class="lang-ko">ZNS_FI_INPAY 프로그램 실행 결과 및 업로드 로그 그리드 시각화.</span>
+              <span class="lang-en">Visual representation of ZNS_FI_INPAY payment execution status grid showing successful and failed bulk uploads.</span>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <p>
+        <span class="lang-ko">&copy; 2026 SAP ABAP 포트폴리오. ERP 개발을 향한 열정으로 구축되었습니다.</span>
+        <span class="lang-en">&copy; 2026 SAP ABAP Portfolio. Built with passion for ERP development.</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- JavaScript -->
+  <script src="app2.js"></script>
+</body>
+</html>

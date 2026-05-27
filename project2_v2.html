@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Eco-Bio Business Model Analysis 프로젝트 상세 내역. 밸류체인 분석 및 ERP 도입 제안.">
+  <title>Eco-Bio Business Model Analysis - Project Detail V2</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body class="lang-ko">
+
+  <!-- WebGL Background Canvas for 3D Constellation -->
+  <canvas id="webgl-bg"></canvas>
+
+  <!-- Header with Back Link & Language Toggle -->
+  <header id="header" class="scrolled">
+    <div class="container navbar">
+      <a href="index2.html" class="nav-logo">
+        <span>SAP</span> ABAPer
+      </a>
+      <ul class="nav-links" style="display: flex;">
+        <li>
+          <a href="index2.html#projects">
+            <span class="lang-ko">&larr; 홈으로 돌아가기</span>
+            <span class="lang-en">&larr; Back to Home</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Language Selector Toggle -->
+      <div class="lang-switcher">
+        <button id="btn-ko" class="lang-btn active">KO</button>
+        <button id="btn-en" class="lang-btn">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="project-detail-section">
+    <!-- Project Header -->
+    <div class="project-detail-header">
+      <div class="container">
+        <!-- Badge is placed directly in the flow to prevent absolute overlaps -->
+        <span class="project-badge-inline" style="background-color: rgba(37, 99, 235, 0.2); margin-bottom: 8px;">
+          <span class="lang-ko">공모전 참가상</span>
+          <span class="lang-en">Participation Prize</span>
+        </span>
+        <h1>
+          <span class="lang-ko">기업 및 산업 밸류체인 분석</span>
+          <span class="lang-en">Corporate &amp; Industry Value Chain Analysis</span>
+        </h1>
+        <div class="project-detail-meta">
+          <span class="tag tag-domain">Value Chain Analysis</span>
+          <span class="tag tag-core">Business Process Analysis</span>
+          <span class="tag tag-web">ERP Proposal</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Body -->
+    <div class="container project-detail-body">
+      <div class="project-detail-grid">
+        
+        <!-- Main Content -->
+        <div class="project-detail-card">
+          <!-- Award Detail -->
+          <div class="project-detail-section-block">
+            <h2>
+              <span class="lang-ko">수상 내역 및 프로젝트 개요</span>
+              <span class="lang-en">Awards &amp; Overview</span>
+            </h2>
+            <p><strong>
+              <span class="lang-ko">지역 기업 분석 공모전 참가상 수상</span>
+              <span class="lang-en">Participation Prize in the Regional Corporate Analysis Contest</span>
+            </strong></p>
+            <p class="lang-ko">
+              이 프로젝트는 에코바이오 연구소의 해양 바이오 클러스터 비즈니스 모델을 객관적으로 분석하는 것을 목표로 진행되었습니다. 우리 팀은 해양 생물 자원의 가공 및 유통 공정을 세분화하여 문제점을 정의하고, 프로세스 개선을 위한 최적의 IT 아키텍처 및 ERP 도입 전략을 제안하여 수상 성과를 거두었습니다.
+            </p>
+            <p class="lang-en">
+              This project focused on analyzing the marine bio-cluster business model of the Eco-Bio Research Institute. Our team examined regional manufacturing processes, commercialization paths, and IT solution strategies to optimize corporate operations, winning the regional contest's participation award.
+            </p>
+          </div>
+
+          <!-- Core Insights -->
+          <div class="project-detail-section-block">
+            <h2>
+              <span class="lang-ko">핵심 분석 내용</span>
+              <span class="lang-en">Core Insights</span>
+            </h2>
+            <p class="lang-ko">
+              해양 추출물을 기반으로 한 화장품과 건강기능식품 제조 공정 간의 높은 시너지 효과를 분석해냈습니다. 주요 정제 및 가공 설비와 원자재 준비 프로세스를 공유함으로써 에코바이오 연구소가 원자재 정제 비용을 최대 30% 절감할 수 있는 밸류체인 통합 방안을 제안했습니다.
+            </p>
+            <p class="lang-ko">
+              또한 서천 해양바이오 클러스터의 물류·유통 인프라를 연계하는 IT 공급망(Supply Chain) 협업 모델을 구상했습니다. 지역 공급망을 통합 데이터베이스로 구축하여 원재료 수급 주기를 분석하고, 이에 맞춘 자재 투입 계획 자동화를 통해 계절성 원재료 공급 변동에 따른 재고 리스크를 상쇄하는 방안을 설계했습니다.
+            </p>
+            <p class="lang-en">
+              We analyzed the high-value cross-synergy between manufacturing marine-based cosmetics and health supplements. By utilizing natural extracts, the Eco-Bio Research Institute can share primary refining resources, saving up to 30% in raw material preparation costs.
+            </p>
+            <p class="lang-en">
+              I proposed an IT and operational integration strategy leveraging the infrastructure of the Seocheon Marine Bio-Cluster. By linking local supplier networks into a unified regional supply chain database, the institute could automate raw material scheduling, stabilizing inventory levels against seasonal supply swings.
+            </p>
+          </div>
+
+          <!-- Developer's Perspective -->
+          <div class="project-detail-section-block">
+            <h2>
+              <span class="lang-ko">ERP 개발자 관점에서의 가치</span>
+              <span class="lang-en">Developer's Perspective</span>
+            </h2>
+            <p class="lang-ko">
+              예비 SAP ERP 개발자로서 이 공모전은 연구개발(R&amp;D)부터 원자재 조달(Sourcing), 생산(Production), 유통(Logistics), 그리고 고객 서비스(Service)에 이르기까지 기업의 전체 가치 사슬 흐름을 완벽히 매핑해볼 수 있는 기회였습니다.
+            </p>
+            <p class="lang-ko">
+              우수한 ERP 개발자는 단순히 기계적으로 코드를 받아 적는 사람이 아닙니다. 기업의 가치 사슬, 자재 수급 주기, 제조원가 명세 구조 등을 깊이 이해해야 합니다. 이 분석을 통해 비즈니스 시나리오를 업무 프로세스 차원에서 정확히 분석한 후 이를 SAP 시스템 아키텍처 및 내부 테이블 모델로 유연하게 녹여낼 수 있는 비즈니스 분석 역량을 입증했습니다.
+            </p>
+            <p class="lang-en">
+              As a prospective SAP ERP developer, this contest provided hands-on experience in analyzing complex manufacturing value chains (covering R&amp;D &rarr; Sourcing &rarr; Production &rarr; Logistics &rarr; Service).
+            </p>
+            <p class="lang-en">
+              An excellent ERP developer does not just write isolated code. They must thoroughly understand corporate value chains, inventory valuation methods, and manufacturing lead times. This project proved my ability to deeply comprehend complex business processes before laying down database tables and workflows in a system.
+            </p>
+          </div>
+        </div>
+
+        <!-- Sidebar (Visuals) -->
+        <div class="project-detail-sidebar">
+          <div class="image-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+            </svg>
+            <span>
+              <span class="lang-ko">밸류체인 다이어그램</span>
+              <span class="lang-en">Value Chain Diagram</span>
+            </span>
+            <p>
+              <span class="lang-ko">원천 원재료 수급부터 다단계 생산 가공 라인 및 대리점 배송 물류 경로 흐름도.</span>
+              <span class="lang-en">Detailed process map tracking marine raw material intake through production phases and distribution channels.</span>
+            </p>
+          </div>
+
+          <div class="image-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+            </svg>
+            <span>
+              <span class="lang-ko">SWOT 분석 차트</span>
+              <span class="lang-en">SWOT Analysis Chart</span>
+            </span>
+            <p>
+              <span class="lang-ko">강점(해양 클러스터 연계성), 약점(계절성 수급 변동) 및 IT 공급망 솔루션을 통한 위기 극복 전략.</span>
+              <span class="lang-en">Strategic evaluation highlighting Eco-Bio's strengths in regional cluster backing and opportunities in IT supply-chain adoption.</span>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <p>
+        <span class="lang-ko">&copy; 2026 SAP ABAP 포트폴리오. ERP 개발을 향한 열정으로 구축되었습니다.</span>
+        <span class="lang-en">&copy; 2026 SAP ABAP Portfolio. Built with passion for ERP development.</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- JavaScript -->
+  <script src="app2.js"></script>
+</body>
+</html>
