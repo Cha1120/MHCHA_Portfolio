@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MM Module Inventory Tracking ALV Report 프로젝트 상세 내역. SAP ABAP MM 모듈 최적화 개발.">
+  <title>MM Module Inventory Tracking - Project Detail</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="lang-ko"> <!-- Defaults to Korean -->
+
+  <!-- WebGL Background Canvas for 3D Constellation -->
+  <canvas id="webgl-bg"></canvas>
+
+  <!-- Header with Back Link & Language Toggle -->
+  <header id="header" class="scrolled">
+    <div class="container navbar">
+      <a href="index.html" class="nav-logo">
+        <span>SAP</span> ABAPer
+      </a>
+      <ul class="nav-links" style="display: flex;">
+        <li>
+          <a href="index.html#projects">
+            <span class="lang-ko">&larr; 홈으로 돌아가기</span>
+            <span class="lang-en">&larr; Back to Home</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Language Selector Toggle -->
+      <div class="lang-switcher">
+        <button id="btn-ko" class="lang-btn active">KO</button>
+        <button id="btn-en" class="lang-btn">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="project-detail-section">
+    <!-- Project Header -->
+    <div class="project-detail-header">
+      <div class="container">
+        <span class="hero-badge">
+          <span class="lang-ko">미니 프로젝트</span>
+          <span class="lang-en">Mini Project</span>
+        </span>
+        <h1>
+          <span class="lang-ko">MM 모듈 실시간 재고 추적 ALV 리포트</span>
+          <span class="lang-en">MM Module Inventory Tracking ALV Report</span>
+        </h1>
+        <div class="project-detail-meta">
+          <span class="tag tag-core">SAP MM Module</span>
+          <span class="tag tag-domain">Performance Tuning</span>
+          <span class="tag tag-web">ABAP ALV Report</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Body -->
+    <div class="container project-detail-body">
+      <div class="project-detail-grid">
+        
+        <!-- Main Content -->
+        <div class="project-detail-card tilt-card">
+          <div class="tilt-card-inner">
+            <!-- Role -->
+            <div class="project-detail-section-block">
+              <h2>
+                <span class="lang-ko">담당 역할</span>
+                <span class="lang-en">Role</span>
+              </h2>
+              <p><strong>
+                <span class="lang-ko">풀스택 ABAP 개발 로직 설계 및 성능 최적화 구현</span>
+                <span class="lang-en">Full-stack ABAP logic implementation</span>
+              </strong></p>
+              <p class="lang-ko">
+                이 보고서 프로그램의 데이터 선택 스키마 정의, 내부 테이블(Internal Table) 구조 관계 설계, 화면 레이아웃 정의, 그리고 데이터 조회 성능을 비약적으로 가속화하기 위한 튜닝 루틴을 단독으로 개발 및 적용했습니다.
+              </p>
+              <p class="lang-en">
+                I single-handedly designed the data selection schemas, internal table relationships, screen formatting, and performance tuning routines for this inventory report.
+              </p>
+            </div>
+
+            <!-- Description -->
+            <div class="project-detail-section-block" style="margin-top: 30px;">
+              <h2>
+                <span class="lang-ko">개발 내용</span>
+                <span class="lang-en">Description</span>
+              </h2>
+              <p class="lang-ko">
+                자재 조달 및 물류 관리 부서에서는 공장(Plant)과 보관 위치(Storage Location)별로 실시간 자재 재고 현황을 파악하는 것이 병목 없는 재고 관리를 위해 매우 중요합니다.
+              </p>
+              <p class="lang-ko">
+                이를 돕기 위해 SAP 자재 정보 마스터 및 실시간 재고 원장 테이블인 <code>MARA</code>(일반 자재 데이터), <code>MARC</code>(공장별 자재 데이터), <code>MARD</code>(보관 위치별 자재 데이터)를 고속 조인하고 통합 매핑하는 커스텀 ALV 보고서 화면을 구축하였습니다.
+              </p>
+              <p class="lang-en">
+                For inventory managers, tracking current stock levels across various plants and storage locations is vital for smooth material flows. 
+                I developed a custom ALV report that consolidates material master details and real-time inventory balances from standard SAP tables: <code>MARA</code> (General Material Data), <code>MARC</code> (Plant Data for Material), and <code>MARD</code> (Storage Location Data for Material).
+              </p>
+            </div>
+
+            <!-- Troubleshooting & Solution -->
+            <div class="project-detail-section-block" style="margin-top: 30px;">
+              <h2>
+                <span class="lang-ko">트러블슈팅 &amp; 해결 방안</span>
+                <span class="lang-en">Troubleshooting &amp; Solution</span>
+              </h2>
+              <p class="lang-ko">
+                <strong>문제 상황:</strong> 초기 구현 후 약 50,000건의 자재 원시 데이터셋을 로드하는 스트레스 테스트 중, 보고서 로딩 시간이 45초 이상 지연되는 심각한 성능 저하 현상이 관찰되었습니다. 원인은 자재 정보 마스터 내부 테이블을 루프(Loop) 도는 과정에서 공장별 정보 데이터 획득을 위해 수행한 중첩 루프 구조로 인해 전체 처리 시간 복잡도가 O(N*M)의 2차 시간 복잡도를 형성했기 때문이었습니다.
+              </p>
+              <p class="lang-ko">
+                <strong>해결책:</strong> 루프 내부에서의 선형 스캔 방식(Linear Search) 대신, 매핑의 대상이 되는 공장 데이터 내부 테이블(<code>lt_marc</code>)을 정합 키(<code>matnr</code>) 기준으로 오름차순 사전 정렬(<code>SORT</code>)한 뒤 <code>READ TABLE ... BINARY SEARCH</code> 구문을 적용하였습니다. 탐색의 시간 복잡도를 O(N)에서 O(log N)으로 단축함으로써 대량 데이터 매핑 부하를 제거하였고, 결과적으로 리포트 로딩 속도를 기존 45초에서 1.5초 미만으로 단축시켰습니다.
+              </p>
+              <p class="lang-en">
+                <strong>Challenge:</strong> During initial runs with production-sized datasets (approx. 50,000 materials), the report took more than 45 seconds to load. The bottleneck was identified as nested loops parsing internal tables to map plant information to material master rows, leading to quadratic time complexity O(N*M).
+              </p>
+              <p class="lang-en">
+                <strong>Solution:</strong> Instead of executing standard linear searches within loop structures, I sorted the target internal table (<code>lt_marc</code>) by its key field (<code>matnr</code>) and implemented the <code>READ TABLE ... BINARY SEARCH</code> statement. This reduced the search complexity from O(N) to O(log N), slashing the report rendering time to under 1.5 seconds.
+              </p>
+              
+              <!-- Code Section -->
+              <div class="code-block-container">
+                <div class="code-block-header">
+                  <span class="code-block-title">zns_mm_inv_optimization.abap</span>
+                  <span class="code-block-title">ABAP</span>
+                </div>
+                <div class="code-block-pre">
+                  <pre class="code-block-code"><code><span class="code-comment">* Sort the target internal table by search key</span>
+<span class="code-keyword">SORT</span> lt_marc <span class="code-keyword">BY</span> matnr.
+
+<span class="code-comment">* Loop through main material list</span>
+<span class="code-keyword">LOOP AT</span> lt_mara <span class="code-keyword">INTO</span> ls_mara.
+  <span class="code-keyword">CLEAR</span> ls_output.
+  ls_output-matnr = ls_mara-matnr.
+  ls_output-mtart = ls_mara-mtart.
+
+  <span class="code-comment">* Use Binary Search for high-speed table mapping</span>
+  <span class="code-keyword">READ TABLE</span> lt_marc <span class="code-keyword">INTO</span> ls_marc 
+    <span class="code-keyword">WITH KEY</span> matnr = ls_mara-matnr
+    <span class="code-keyword">BINARY SEARCH</span>.
+
+  <span class="code-keyword">IF</span> sy-subrc = 0.
+    ls_output-werks = ls_marc-werks.
+    ls_output-steuc = ls_marc-steuc.
+    <span class="code-keyword">APPEND</span> ls_output <span class="code-keyword">TO</span> lt_output.
+  <span class="code-keyword">ENDIF</span>;
+<span class="code-keyword">ENDLOOP</span>.</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar (Visuals) -->
+        <div class="project-detail-sidebar">
+          <div class="image-placeholder tilt-card">
+            <div class="tilt-card-inner" style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 8.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+              </svg>
+              <span>
+                <span class="lang-ko">재고조회 ALV 화면</span>
+                <span class="lang-en">Inventory ALV Screen</span>
+              </span>
+              <p>
+                <span class="lang-ko">MARA, MARC, MARD 테이블 마스터 필드 매핑 및 실시간 재고량 그리드 리포트 시각화.</span>
+                <span class="lang-en">Consolidated report layout grid containing MARA, MARC, and MARD master fields with live quantity records.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container">
+      <p>
+        <span class="lang-ko">&copy; 2026 SAP ABAP 포트폴리오. ERP 개발을 향한 열정으로 구축되었습니다.</span>
+        <span class="lang-en">&copy; 2026 SAP ABAP Portfolio. Built with passion for ERP development.</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>

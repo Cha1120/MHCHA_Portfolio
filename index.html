@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="비즈니스 로직과 코드를 연결하는 신입 SAP ABAP 개발자 포트폴리오. FI 모듈 및 CBO 개발 전문.">
+  <title>SAP ABAP Developer | Portfolio</title>
+  
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="lang-ko"> <!-- Defaults to Korean -->
+
+  <!-- WebGL Background Canvas for 3D Constellation -->
+  <canvas id="webgl-bg"></canvas>
+
+  <!-- Header & Navigation -->
+  <header id="header">
+    <div class="container navbar">
+      <a href="#hero" class="nav-logo">
+        <span>SAP</span> ABAPer
+      </a>
+      <ul class="nav-links">
+        <li>
+          <a href="#hero" class="active">
+            <span class="lang-ko">홈</span>
+            <span class="lang-en">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#about">
+            <span class="lang-ko">소개 &amp; 기술</span>
+            <span class="lang-en">About</span>
+          </a>
+        </li>
+        <li>
+          <a href="#projects">
+            <span class="lang-ko">프로젝트</span>
+            <span class="lang-en">Projects</span>
+          </a>
+        </li>
+        <li>
+          <a href="#contact">
+            <span class="lang-ko">연락처</span>
+            <span class="lang-en">Contact</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Language Selector Toggle -->
+      <div class="lang-switcher">
+        <button id="btn-ko" class="lang-btn active">KO</button>
+        <button id="btn-en" class="lang-btn">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="hero-gradient-overlay"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="hero-badge">
+          <span class="lang-ko">신입 SAP ABAP 개발자</span>
+          <span class="lang-en">SAP ABAP Developer</span>
+        </span>
+        
+        <h1 class="hero-title">
+          <span class="lang-ko">비즈니스 로직과<br><span class="highlight">코드를 연결합니다</span></span>
+          <span class="lang-en">Connecting Business Logic<br><span class="highlight">with Code</span></span>
+        </h1>
+        
+        <p class="hero-subtitle">
+          <span class="lang-ko">단순한 개발을 넘어 데이터 흐름과 가치 사슬을 이해하며, FI 모듈을 전문으로 다루는 신입 SAP ABAP 개발자입니다.</span>
+          <span class="lang-en">Entry-level SAP ABAP Developer specializing in FI Module. Focuses on data flow and corporate value chains.</span>
+        </p>
+        
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">
+            <span class="lang-ko">프로젝트 보기</span>
+            <span class="lang-en">View Projects</span>
+          </a>
+          <a href="#contact" class="btn btn-hero-outline">
+            <span class="lang-ko">연락하기</span>
+            <span class="lang-en">Contact Me</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About & Skills Section -->
+  <section id="about" class="about-section reveal">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="lang-ko">소개 및 핵심 기술</span>
+          <span class="lang-en">About &amp; Skills</span>
+        </h2>
+        <p class="section-subtitle">
+          <span class="lang-ko">학력 및 핵심 기술 역량</span>
+          <span class="lang-en">Education details and technical competencies</span>
+        </p>
+      </div>
+      
+      <div class="about-grid">
+        <!-- About Card (Academic & Vision) -->
+        <div class="about-card tilt-card">
+          <div class="tilt-card-inner">
+            <div class="card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.231-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+              </svg>
+            </div>
+            
+            <h3>
+              <span class="lang-ko">학력 및 전공</span>
+              <span class="lang-en">Education &amp; Major</span>
+            </h3>
+            
+            <p class="about-value">
+              <span class="lang-ko">건양대학교 기업소프트웨어학과</span>
+              <span class="lang-en">Dept. of Enterprise Software</span>
+            </p>
+            <p class="about-desc">
+              <span class="lang-ko">SAP ERP 특성화 전공 학부 과정 이수</span>
+              <span class="lang-en">Konyang University, SAP ERP Specialization</span>
+            </p>
+            
+            <div class="vision-box tilt-card-inner-deep">
+              <h4>
+                <span class="lang-ko">나의 비전</span>
+                <span class="lang-en">My Vision</span>
+              </h4>
+              <blockquote>
+                <span class="lang-ko">"단순한 코딩을 넘어 데이터의 흐름과 기업의 가치 사슬(Value Chain)을 이해하는 개발자가 되겠습니다."</span>
+                <span class="lang-en">"A developer who understands data flow and corporate value chains beyond simple coding."</span>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills Card -->
+        <div class="skills-card tilt-card">
+          <div class="tilt-card-inner">
+            <div class="skills-group">
+              <h4 class="skills-group-title">
+                <span class="lang-ko">핵심 ABAP 기술</span>
+                <span class="lang-en">Core ABAP Development</span>
+              </h4>
+              <div class="skills-tags">
+                <span class="tag tag-core">SAP ABAP</span>
+                <span class="tag tag-core">ALV Report</span>
+                <span class="tag tag-core">CBO Development</span>
+                <span class="tag tag-core">BDC / BAPI</span>
+              </div>
+            </div>
+            
+            <div class="skills-group" style="margin-top: 24px;">
+              <h4 class="skills-group-title">
+                <span class="lang-ko">비즈니스 도메인</span>
+                <span class="lang-en">Domain Expertise</span>
+              </h4>
+              <div class="skills-tags">
+                <span class="tag tag-domain">FI (Finance) Process</span>
+                <span class="tag tag-domain">SD (Sales &amp; Dist.)</span>
+                <span class="tag tag-domain">MM (Materials Mgmt.)</span>
+                <span class="tag tag-domain">System Analysis</span>
+              </div>
+            </div>
+
+            <div class="skills-group" style="margin-top: 24px;">
+              <h4 class="skills-group-title">
+                <span class="lang-ko">웹 &amp; 협업도구</span>
+                <span class="lang-en">Web &amp; Collaboration</span>
+              </h4>
+              <div class="skills-tags">
+                <span class="tag tag-web">HTML5 / CSS3</span>
+                <span class="tag tag-web">JavaScript (ES6+)</span>
+                <span class="tag tag-web">Git / GitHub</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section reveal">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="lang-ko">프로젝트 경험</span>
+          <span class="lang-en">Projects</span>
+        </h2>
+        <p class="section-subtitle">
+          <span class="lang-ko">수행 프로젝트 및 성과</span>
+          <span class="lang-en">Key projects and accomplishments</span>
+        </p>
+      </div>
+
+      <div class="projects-list">
+        <!-- Project 1 -->
+        <div class="project-card tilt-card">
+          <div class="project-badge">
+            <span class="lang-ko">캡스톤 디자인</span>
+            <span class="lang-en">Capstone Design</span>
+          </div>
+          <div class="project-content tilt-card-inner">
+            <div class="project-main-info">
+              <h3 class="project-name">Custom FI Payment Solution</h3>
+              <p class="project-role-badge">
+                <span class="lang-ko">역할: FI 모듈 커스텀 개발</span>
+                <span class="lang-en">Role: FI Module Custom Developer</span>
+              </p>
+            </div>
+            <div class="project-details">
+              <p class="project-text-ko lang-ko">
+                금융(FI) 모듈의 데이터 흐름 관리를 위한 입출금 커스텀 솔루션 개발 과제입니다. 
+                <code>ZNS_FI_INPAY</code> 및 <code>ZNS_FI_OTPAY</code> CBO 프로그램을 설계 및 구현하였으며, 
+                입출금 전표의 정합성 검증과 실시간 관리를 위한 ALV 리포트 화면을 설계하여 데이터 관리 신뢰도를 극대화했습니다.
+              </p>
+              <p class="project-text-en lang-en">
+                Designed and developed custom solutions <code>ZNS_FI_INPAY</code> and <code>ZNS_FI_OTPAY</code> to manage incoming/outgoing payment data flows. Implemented ALV reports for strict data verification, ensuring robust integrity and compliance for financial transactions.
+              </p>
+              <div class="project-tech-stack" style="margin-bottom: 16px;">
+                <span>SAP ABAP</span>
+                <span>CBO Development</span>
+                <span>ALV Grid</span>
+                <span>FI Module</span>
+              </div>
+              <div class="project-link-action" style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 16px;">
+                <a href="project1.html" class="btn btn-outline">
+                  <span class="lang-ko">상세 케이스 스터디 보기 &rarr;</span>
+                  <span class="lang-en">View Case Study &rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card tilt-card">
+          <div class="project-badge">
+            <span class="lang-ko">공모전 참가상</span>
+            <span class="lang-en">Participation Prize</span>
+          </div>
+          <div class="project-content tilt-card-inner">
+            <div class="project-main-info">
+              <h3 class="project-name">Eco-Bio Business Model Analysis</h3>
+              <p class="project-role-badge">
+                <span class="lang-ko">역할: 밸류체인 분석가</span>
+                <span class="lang-en">Role: Value Chain Analyst</span>
+              </p>
+            </div>
+            <div class="project-details">
+              <p class="project-text-ko lang-ko">
+                에코바이오 연구소의 해양 바이오 클러스터 비즈니스 모델을 대상으로 한 밸류체인 분석 프로젝트입니다. 
+                제조/가공 및 유통 공정을 정밀 분석하여 비즈니스 모델의 개선점을 도출하고, 
+                최적의 IT 시스템 아키텍처 및 ERP 도입 연계 솔루션 방안을 제안하여 수상하였습니다.
+              </p>
+              <p class="project-text-en lang-en">
+                Analyzed the marine bio-cluster business model of Eco-Bio Research Institute. Mapped operational workflows and manufacturing processes to evaluate value chain gaps, subsequently proposing strategic IT solutions and ERP mapping enhancements.
+              </p>
+              <div class="project-tech-stack" style="margin-bottom: 16px;">
+                <span>Business Analysis</span>
+                <span>Value Chain Analysis</span>
+                <span>ERP Linkage Proposal</span>
+                <span>Manufacturing Process</span>
+              </div>
+              <div class="project-link-action" style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 16px;">
+                <a href="project2.html" class="btn btn-outline">
+                  <span class="lang-ko">상세 케이스 스터디 보기 &rarr;</span>
+                  <span class="lang-en">View Case Study &rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card tilt-card">
+          <div class="project-badge">
+            <span class="lang-ko">미니 프로젝트</span>
+            <span class="lang-en">Mini Project</span>
+          </div>
+          <div class="project-content tilt-card-inner">
+            <div class="project-main-info">
+              <h3 class="project-name">MM Module Inventory Tracking ALV Report</h3>
+              <p class="project-role-badge">
+                <span class="lang-ko">역할: 풀스택 ABAP 개발자</span>
+                <span class="lang-en">Role: Full-stack ABAP Developer</span>
+              </p>
+            </div>
+            <div class="project-details">
+              <p class="project-text-ko lang-ko">
+                자재관리(MM) 모듈의 실시간 재고 추적을 위한 커스텀 ALV 리포트입니다. 
+                <code>MARA</code>, <code>MARC</code>, <code>MARD</code> 등 표준 테이블 데이터를 결합하여 재고 현황을 모니터링하며, 
+                대용량 데이터 조회 시 발생하는 성능 병목 현상을 해결하기 위해 이진 탐색(Binary Search) 성능 튜닝을 수행했습니다.
+              </p>
+              <p class="project-text-en lang-en">
+                Developed a custom ALV report to track real-time inventory levels, combining data from standard SAP tables like MARA, MARC, and MARD. Overcame query bottlenecks for large data volumes using Binary Search optimization.
+              </p>
+              <div class="project-tech-stack" style="margin-bottom: 16px;">
+                <span>SAP ABAP</span>
+                <span>MM Module</span>
+                <span>ALV Grid</span>
+                <span>Performance Optimization</span>
+              </div>
+              <div class="project-link-action" style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 16px;">
+                <a href="project3.html" class="btn btn-outline">
+                  <span class="lang-ko">상세 케이스 스터디 보기 &rarr;</span>
+                  <span class="lang-en">View Case Study &rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section reveal">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" style="color: #FFFFFF !important;">
+          <span class="lang-ko">연락처</span>
+          <span class="lang-en">Get In Touch</span>
+        </h2>
+        <p class="section-subtitle" style="color: #94A3B8 !important;">
+          <span class="lang-ko">질문이나 제안 사항이 있으시면 편하게 연락주세요.</span>
+          <span class="lang-en">Please contact me if you have any questions or proposals.</span>
+        </p>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-card tilt-card">
+          <div class="tilt-card-inner contact-card-inner" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; width: 100%;">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+              </div>
+              <div>
+                <h4>Email</h4>
+                <p><a href="mailto:abap_dev@example.com">abap_dev@example.com</a></p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-.778.099-1.533.284-2.253" />
+                </svg>
+              </div>
+              <div>
+                <h4>GitHub</h4>
+                <p><a href="https://github.com/abap-developer" target="_blank" rel="noopener noreferrer">github.com/abap-developer</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <p>
+        <span class="lang-ko">&copy; 2026 SAP ABAP 포트폴리오. ERP 개발을 향한 열정으로 구축되었습니다.</span>
+        <span class="lang-en">&copy; 2026 SAP ABAP Portfolio. Built with passion for ERP development.</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Three.js CDN Link -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Main JS Link -->
+  <script src="app.js"></script>
+</body>
+</html>
